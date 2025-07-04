@@ -1,51 +1,143 @@
-<!DOCTYPE html>
-<html lang="fr"></html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Villa de Luxe</title>
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="imgs/icon.png" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/animations.css" rel="stylesheet" />
+    <title>Delicious Bistro - Fine Dining Experience</title>
+    <meta name="description" content="Experience the finest dining with our carefully crafted menu featuring fresh ingredients and exceptional flavors. Free home delivery available.">
+    <meta name="keywords" content="restaurant, dining, food, menu, delivery, bistro">
+    <script type="module" crossorigin src="js/index-wwR1Mx1N.js"></script>
+    <link rel="stylesheet" crossorigin href="css/index-BOMUWkaU.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+    <script src="js/bootstrap.bundle.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-        <a class="navbar-brand" href="index.html">Luxury Living</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
+    <nav class="custom-navbar">
+      <div class="custom-container">
+        <a class="custom-navbar-brand" href="#">Luxury Living</a>
+        <button class="custom-navbar-toggler" id="navbarToggle" aria-label="Toggle navigation">
+          &#9776;
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="villa.html">Espace Dar Es Saada</a>
-          </li>
-          <li class="nav-item"></li>
-            <a class="nav-link" href="apartment.html">Appartement Majorel</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Restaurant.html">Restaurant</a>
-          </li>
+        <div class="custom-navbar-collapse" id="navbarNav">
+          <ul class="custom-navbar-nav">
+            <li class="custom-nav-item">
+              <a class="custom-nav-link" href="index.html">Accueil</a>
+            </li>
+            <li class="custom-nav-item">
+              <a class="custom-nav-link" href="villa.html">Espace Dar Es Saada</a>
+            </li>
+            <li class="custom-nav-item">
+              <a class="custom-nav-link" href="apartment.html">Appartement Majorel</a>
+            </li>
+            <li class="custom-nav-item">
+              <a class="custom-nav-link" href="Restaurant.html">Restaurant</a>
+            </li>
           </ul>
         </div>
-        </div>
-      </nav>
-    <div class="d-flex flex-column justify-content-center align-items-center vh-100 bg-light">
-        <img src="imgs/icon.png" alt="Logo" style="width:100px;height:100px;" class="mb-4">
-        <h1 class="display-4 mb-3">Coming Soon</h1>
-        <p class="lead mb-4">Our restaurant website is under construction.<br>Stay tuned for something amazing!</p>
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
+      </div>
+    </nav>
+    <style>
+    .custom-navbar {
+      background: #222;
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .custom-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .custom-navbar-brand {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .custom-navbar-toggler {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+    }
+    .custom-navbar-collapse {
+      display: flex;
+    }
+    .custom-navbar-nav {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .custom-nav-item {
+      margin-left: 1.5rem;
+    }
+    .custom-nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .custom-nav-link:hover,
+    .custom-nav-link:focus {
+      color: #b73910;
+    }
+    @media (max-width: 768px) {
+      .custom-navbar-toggler {
+        display: block;
+      }
+      .custom-navbar-collapse {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+      }
+      .custom-navbar-collapse.open {
+        display: flex;
+      }
+      .custom-navbar-nav {
+        flex-direction: column;
+        width: 100%;
+      }
+      .custom-nav-item {
+        margin: 0;
+        border-top: 1px solid #333;
+        text-align: center;
+      }
+      .custom-nav-link {
+        padding: 1rem 0;
+        display: block;
+      }
+    }
+    body {
+      padding-top: 60px;
+    }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var toggle = document.getElementById('navbarToggle');
+      var nav = document.getElementById('navbarNav');
+      if (toggle && nav) {
+        toggle.onclick = function() {
+          nav.classList.toggle('open');
+        };
+      }
+    });
+    </script>
+    <div id="root"></div>
   </body>
 </html>
